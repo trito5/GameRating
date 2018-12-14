@@ -1,0 +1,26 @@
+.navbar-brand i {
+  color: #007bff;
+}
+
+.search-group input {
+  border-right: none;
+  margin-right: -12px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.profile {
+  margin-right: 1rem;
+}
+
+.search-group button {
+  background-color: white;
+  border: 1px solid #ced4da;
+  border-left: none;
+  margin-left: -13px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.btn i:hover {
+  color: white;
+}

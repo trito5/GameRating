@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:spanth="http://www.w3.org/1999/XSL/Transform">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="navigation">
+    <a class="navbar-brand" href="/index">
+        <i class="fas fa-gamepad fa-2x"></i>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/index">Rate Games</a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <form class="form-inline my-2 mx-auto my-lg-0" action="/search" method="post">
+            <div class="search-group">
+                <input class="form-control mr-sm-2" name="searchword" type="search" placeholder="Search"
+                       aria-label="Search">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"
+                                                                                      id="btn-search"></i></button>
+            </div>
+        </form>
+
+        <nav class="navbar navbar-light bg-light" th:if="${session.isLogin}">
+            <form class="form-inline profile">
+                <a href="/profile"><i class="fas fa-user"></i> Profile</a>
+            </form>
+            <form class="form-inline" action="/logout" method="get">
+                <button class="btn btn-outline-primary ml-sm-2" type="submit">Log out</button>
+            </form>
+        </nav>
+        <nav class="navbar navbar-light bg-light" th:unless="${session.isLogin}">
+            <form class="form-inline" action="/login" method="get">
+
+                <button class="btn btn-primary " type="submit">Log in</button>
+            </form>
+            <form class="form-inline" action="/register" method="get">
+                <button class="btn btn-outline-primary ml-sm-2" type="submit">Sign up</button>
+            </form>
+        </nav>
+
+    </div>
+
+</nav>
+
+</body>
+</html>

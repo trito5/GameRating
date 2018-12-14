@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game Info</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/Navbar.css">
+    <link rel="stylesheet" href="/css/GameInfo.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+          crossorigin="anonymous">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+<nav th:replace="~{/layout :: nav}"></nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm title-col">
+            <h1 th:text="${game.name}"></h1>
+        </div>
+
+        <div class="rating col-sm text-right">
+            <h2><i class="fas fa-star"></i><span th:text="${#numbers.formatDecimal(game.rating,1,1)}"></span>/5</h2>
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-3" th:if="${session.isLogin}">
+                    <h5 class="userRating">Your rating:</h5>
+                </div>
+                <div class="col-sm-5 rating-col" th:if="${session.isLogin}">
+                    <form action="/info" method="post">
+                        <fieldset class="rating">
+                            <input type="hidden" name="id" th:value="${game.id}">
+                            <input type="radio" onclick="this.form.submit();" id="star5" name="star" value="5"/><label
+                                class="full" for="star5"
+                                title="Awesome - 5 stars"></label>
+
+                            <input type="radio" onclick="this.form.submit();" id="star4" name="star" value="4"/><label
+                                class="full" for="star4"
+                                title="Pretty good - 4 stars"></label>
+
+                            <input type="radio" onclick="this.form.submit();" id="star3" name="star" value="3"/><label
+                                class="full" for="star3"
+                                title="Meh - 3 stars"></label>
+
+                            <input type="radio" onclick="this.form.submit();" id="star2" name="star" value="2"/><label
+                                class="full" for="star2"
+                                title="Kinda bad - 2 stars"></label>
+
+                            <input type="radio" onclick="this.form.submit();" id="star1" name="star" value="1"/><label
+                                class="full" for="star1"
+                                title="Sucks big time - 1 star"></label>
+
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="imgbg col-sm">
+            <img th:src="${game.imgUrl}" alt="">
+        </div>
+        <div class="col-sm">
+            <div class="description">
+                <h3>Description</h3>
+                <p th:text="${game.description}">
+
+                </p>
+                <h3>Information</h3>
+                <table class="table table-striped">
+                    <tr>
+                        <td>Age rating:</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Genre:</td>
+                        <td>Business simulation game</td>
+                    </tr>
+                    <tr>
+                        <td>Release date:</td>
+                        <td>October 17, 2001</td>
+                    </tr>
+                    <tr>
+                        <td>Developer:</td>
+                        <td>Blue Fang Games</td>
+                    </tr>
+                    <tr>
+                        <td>Platform:</td>
+                        <td>Microsoft Windows, Macintosh</td>
+                    </tr>
+                    <tr>
+                        <td>Modes:</td>
+                        <td>Single player</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <p class="mt-5 mb-3 text-muted">Dream Team Ltd. &copy; 2018</p>
+</div>
+
+</body>
+
+</html>

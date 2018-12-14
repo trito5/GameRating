@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:spanth="http://www.w3.org/1999/XSL/Transform">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/Navbar.css">
+    <link rel="stylesheet" href="/css/Profile.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+          crossorigin="anonymous">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+<nav th:replace="~{/layout :: nav}"></nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h1>Kherota</h1>
+        </div>
+        <div class="col-sm text-right">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm">
+            <img class="profileimg" src="/img/Kherota J.jpg" alt="">
+        </div>
+        <div class="col-sm">
+            <div class="description">
+                <h3>Description</h3>
+                <p>
+                    Kherota är en Glad och snäll tjej som gillar att umgås med vänner och familj.
+                    Hon ägnar mycket tid till att måla och granska konst.
+                    Hennes största intresse är mat och lägger mycket kärlek och omsorg på sin matlagning.
+                    För övrigt är hon lugn och fin.
+                </p>
+                <h3>Information</h3>
+                <table class="table table-striped">
+                    <tr>
+                        <td>Age:</td>
+                        <td>22</td>
+                    </tr>
+                    <tr>
+                        <td>Location:</td>
+                        <td>Stockholm, Sweden</td>
+                    </tr>
+                    <tr>
+                        <td>Registration date:</td>
+                        <td>October 17, 2010</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row ratedgames">
+        <div class="col-sm-2">
+        </div>
+        <div class="col-sm">
+            <div class="card" style="width: 15rem;">
+                <img class="card-img-top rateimg"
+                     src="https://images.igdb.com/igdb/image/upload/t_cover_big/u8h3uex9gdac5g6tblat.jpg"
+                     alt="Card image cap">
+                <div class="card-body">
+                    <h5>Tekken 5</h5>
+                    <p class="card-text"><i class="fas fa-star"></i>5/5</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card" style="width: 15rem;">
+                <img class="card-img-top rateimg" src="/img/ztCover.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h5>Zoo Tycoon</h5>
+                    <p class="card-text"><i class="fas fa-star"></i>4/5</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2">
+    </div>
+</div>
+<p class="mt-5 mb-3 text-muted">Dream Team Ltd. &copy; 2018</p>
+</div>
+
+</body>
+
+</html>

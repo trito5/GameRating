@@ -1,0 +1,36 @@
+.container {
+    margin-top: 5rem;
+  }
+
+  .profileimg {
+    width: 20rem;
+    border-radius: 50%;
+  }
+
+  .rateimg {
+    width: 15rem;
+  }
+
+  .ratedgames {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+
+  .ratedgames i {
+    color: gold;
+  }
+
+  body{
+    background-image: url("../img/gamepadsolid.png");
+    background-repeat: repeat;
+    background-size: 25rem;
+    background-attachment: fixed;
+
+
+}
+.description{
+background-color: white;
+padding: 1rem;
+}
+
+

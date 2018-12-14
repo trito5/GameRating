@@ -1,0 +1,72 @@
+
+body{
+  background-image: url("../img/gamepadsolid.png");
+  background-repeat: repeat;
+  background-size: 25rem;
+  background-attachment: fixed;
+}
+.container {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: white;
+}
+
+.title-col {
+  padding-top: 2rem;
+}
+
+.text-right i {
+  color: gold;
+}
+
+.container img {
+  width: 25rem;
+}
+
+.description p {
+  padding: 1rem;
+}
+
+.userRating {
+  float: right;
+}
+
+@import url(https://use.fontawesome.com/releases/v5.5.0/css/all.css);
+
+fieldset, label { margin: 0; padding: 0; }
+
+.rating { 
+  border: none;
+  padding: 0;
+  margin: 0;
+  float: right;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 1.25em;
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  content: "\f005";
+}
+
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } 
+
+.rating > input:checked + label:hover, 
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, 
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
