@@ -87,7 +87,6 @@ public class GameController {
 
     @PostMapping("/register")
     public String checkRegister(@RequestParam String username, @RequestParam String email, @RequestParam String password, @RequestParam String confirmPassword) {
-//        boolean answer =
         databaseCon.createUser(username, email, password, confirmPassword);
         System.out.println(username + " " + password + " " + confirmPassword);
         return "login";
